@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Input Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+    <link rel="stylesheet" href="nama_file.css">
+</head>
+
+<body>
+    <form id="app_form">
+        <fieldset>
+            <legend>Input Data</legend>
+
+            <label for="app_nama">Nama</label>
+            <input id="app_nama" type="text">
+
+            <label for="app_hp">Nomor Hp</label>
+            <input id="app_hp" type="number">
+
+            <label for="app_penyakit">Penyakit</label>
+            <select id="app_penyakit">
+                <option value="MEL">MEL</option>
+                <option value="NONMEL">NONMEL</option>
+            </select>
+
+            <label for="app_jadwalkemo">Jadwal Kemoterapi</label>
+            <input id="app_jadwalkemo" type="date">
+
+            <label for="app_terakhirkemo">Terakhir Kemoterapi</label>
+            <input id="app_terakhirkemo" type="date">
+
+            <label for="app_jadwalkrio">Jadwal Krioterapi</label>
+            <input id="app_jadwalkrio" type="date">
+
+            <label for="app_terakhirkrio">Terakhir Krioterapi</label>
+            <input id="app_terakhirkrio" type="date">
+
+            <input id="app_button" type="submit" value="submit" disabled>
+        </fieldset>
+    </form>
+    <pre id="app_log"></pre>
+    <script src="bundle.js"></script>
+</body>
+
+</html>
