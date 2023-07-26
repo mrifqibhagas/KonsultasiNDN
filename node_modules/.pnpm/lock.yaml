@@ -17,6 +17,9 @@ dependencies:
   '@ndn/util':
     specifier: https://ndnts-nightly.ndn.today/util.tgz
     version: '@ndnts-nightly.ndn.today/util.tgz'
+  '@ndn/ws-transport':
+    specifier: https://ndnts-nightly.ndn.today/ws-transport.tgz
+    version: '@ndnts-nightly.ndn.today/ws-transport.tgz'
 
 devDependencies:
   webpack:
