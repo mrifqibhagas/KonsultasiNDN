@@ -6,6 +6,7 @@ import { WsTransport } from "@ndn/ws-transport";
 async function datapasien(evt) {
   evt.preventDefault();
   const prefix = new Name("/data/datapasien"); 
+  const app = document.querySelector("#app_param");
   const $button = document.querySelector("#app_datapasien");
   
   const endpoint = new Endpoint();
@@ -16,7 +17,7 @@ async function datapasien(evt) {
   interest.name = prefix; //membuat const baru untuk dari fungsi interest dan name
   interest.mustBeFresh = true; 
   interest.lifetime = 10000;
-  //interest.appParameters = encoder.encode(app); //melakukan encode packet ndn
+  interest.appParameters = encoder.encode(app); //melakukan encode packet ndn
   await interest.updateParamsDigest();
 
   const t0 = Date.now();
