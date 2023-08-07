@@ -6,7 +6,8 @@ import { WsTransport } from "@ndn/ws-transport";
 async function datapasien(evt) {
   evt.preventDefault();
   const prefix = new Name("/data/datapasien"); 
-
+  const $button = document.querySelector("#app_datapasien");
+  
   const endpoint = new Endpoint();
   const encoder = new TextEncoder(); //membuat const baru untuk fungsi TextEncoder
   const interest = new Interest();  //membuat const baru untuk fungsi Interest
