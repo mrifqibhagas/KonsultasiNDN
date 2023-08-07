@@ -2,6 +2,44 @@ import { Endpoint } from "@ndn/endpoint";
 import { AltUri, Interest, Name } from "@ndn/packet";
 import { WsTransport } from "@ndn/ws-transport";
 
+
+async function datapasien(evt) {
+  evt.preventDefault();
+  const prefix = new Name("/data/datapasien"); 
+
+  const endpoint = new Endpoint();
+  const encoder = new TextEncoder(); //membuat const baru untuk fungsi TextEncoder
+  const interest = new Interest();  //membuat const baru untuk fungsi Interest
+  const decoder = new TextDecoder();
+
+  interest.name = prefix; //membuat const baru untuk dari fungsi interest dan name
+  interest.mustBeFresh = true; 
+  interest.lifetime = 10000;
+  interest.appParameters = encoder.encode(app); //melakukan encode packet ndn
+  await interest.updateParamsDigest();
+
+  const t0 = Date.now();
+  const data = await endpoint.consume(interest);
+  const rtt = Date.now() - t0;
+
+  const dataContent = data.content;
+
+  console.log(`${rtt} ms`);
+
+  const listdata = decoder.decode(dataContent);
+  // console.log(dataBaru);
+  const jsonData = JSON.parse(listdata);
+  console.log(jsonData);
+
+
+  // Ambil elemen dengan ID dataContainer untuk menampilkan data
+  // const dataContainer = document.getElementById('dataContainer');
+
+}
+
+
+
+
 async function ping(evt) {
   evt.preventDefault();
   // Disable the submit button during function execution.
@@ -9,7 +47,6 @@ async function ping(evt) {
   $button.disabled = true;
 
   try {
-    // Construct the name prefix <user-input>+/ping
     const prefix = new Name("/data/konsultasi");
     const nama = document.querySelector("#app_nama").value;
     //const umur = document.querySelector("#app_umur").value;
@@ -67,14 +104,17 @@ async function ping(evt) {
   }
 }
 
+
 async function main() {
-  const face = await WsTransport.createFace({}, "wss://scbe.ndntel-u.my.id:9696");
-  face.addRoute(new Name("/"));
+    const face = await WsTransport.createFace({}, "wss://scbe.ndntel-u.my.id:9696");
+    face.addRoute(new Name("/"));
+  
+  
+    // Enable the form after connection was successful.
+    document.querySelector("#app_button").disabled = false;
+    document.querySelector("#app_form").addEventListener("submit", ping);
+    document.querySelector("#app_datapasien").addEventListener("lihatsemua", datapasien);
+  }
+  
+  window.addEventListener("load", main);
 
-
-  // Enable the form after connection was successful.
-  document.querySelector("#app_button").disabled = false;
-  document.querySelector("#app_form").addEventListener("submit", ping);
-}
-
-window.addEventListener("load", main);
