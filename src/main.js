@@ -6,8 +6,8 @@ import { WsTransport } from "@ndn/ws-transport";
 async function datapasien(evt) {
   evt.preventDefault();
   const prefix = new Name("/data/datapasien"); 
-  const app = document.querySelector("#app_param");
-  const $button = document.querySelector("#app_datapasien");
+  const app = "Bagas";
+  //const $button = document.querySelector("#app_datapasien");
   console.log(`test`);
   const endpoint = new Endpoint();
   const encoder = new TextEncoder(); //membuat const baru untuk fungsi TextEncoder
@@ -29,7 +29,7 @@ async function datapasien(evt) {
   console.log(`${rtt} ms`);
 
   const listdata = decoder.decode(dataContent);
-  // console.log(dataBaru);
+  console.log(listdata);
   const jsonData = JSON.parse(listdata);
   console.log(jsonData);
 
