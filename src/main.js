@@ -115,7 +115,7 @@ async function main() {
     // Enable the form after connection was successful.
     document.querySelector("#app_button").disabled = false;
     document.querySelector("#app_form").addEventListener("submit", ping);
-    document.querySelector("#app_datapasien").addEventListener("button", datapasien);
+    document.querySelector("#app_datapasien").addEventListener("click", datapasien);
   }
   
   window.addEventListener("load", main);
