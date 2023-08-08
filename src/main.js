@@ -8,7 +8,7 @@ async function datapasien(evt) {
   const prefix = new Name("/data/datapasien"); 
   const app = document.querySelector("#app_param");
   const $button = document.querySelector("#app_datapasien");
-  
+  console.log(`test`);
   const endpoint = new Endpoint();
   const encoder = new TextEncoder(); //membuat const baru untuk fungsi TextEncoder
   const interest = new Interest();  //membuat const baru untuk fungsi Interest
