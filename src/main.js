@@ -33,9 +33,14 @@ async function datapasien(evt) {
   const jsonData = JSON.parse(listdata);
   console.log(jsonData);
 
-  const outputJsonElement = document.getElementById('output_json');
-  outputJsonElement.textContent = JSON.stringify(jsonData, null, 2);
+  const names = jsonData.map(name => name.replace(/"/g, '')).join('\n');
+  console.log(names);
+
+
   
+  const outputJsonElement = document.getElementById('output_json');
+  outputJsonElement.textContent = names;
+
   // Menampilkan modal dengan data JSON saat tombol "Lihat Semua" ditekan
   //$('#myModal').modal('show');
   jQuery('#myModal').modal('show');
