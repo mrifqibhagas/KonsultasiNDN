@@ -37,7 +37,9 @@ async function datapasien(evt) {
   outputJsonElement.textContent = JSON.stringify(jsonData, null, 2);
   
   // Menampilkan modal dengan data JSON saat tombol "Lihat Semua" ditekan
-  $('#myModal').modal('show');
+  //$('#myModal').modal('show');
+  jQuery('#myModal').modal('show');
+
 
 }
 
