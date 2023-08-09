@@ -62,9 +62,9 @@ async function ping(evt) {
     const nama = document.querySelector("#app_nama").value;
     //const umur = document.querySelector("#app_umur").value;
     //const sex = document.querySelector("#app_sex").value;
-    const penyakit = document.querySelector("#app_penyakit").value;
+    //const penyakit = document.querySelector("#app_penyakit").value;
     //const alamat = document.querySelector("#app_alamat").value;
-    const hp = document.querySelector("#app_hp").value;
+    //const hp = document.querySelector("#app_hp").value;
     //const ktp = document.querySelector("#app_ktp").value;
     //const goldar = document.querySelector("#app_goldar").value;
     //const $log = document.querySelector("#app_log");
@@ -83,8 +83,6 @@ async function ping(evt) {
       interest.lifetime = 1000;
       const dataObj = {
         nama: nama,
-        hp: hp,
-        penyakit: penyakit,
         jadwalkemo: jadwalkemo,
         terakhirkemo: terakhirkemo,
         jadwalkrio: jadwalkrio,
