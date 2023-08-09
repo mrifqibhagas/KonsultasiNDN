@@ -1,5 +1,5 @@
 import { Endpoint } from "@ndn/endpoint";
-import { AltUri, Interest, Name } from "@ndn/packet";
+import { Interest, Name } from "@ndn/packet";
 import { WsTransport } from "@ndn/ws-transport";
 
 
@@ -80,7 +80,7 @@ async function ping(evt) {
       const interest = new Interest();
       interest.name = prefix;
       interest.mustBeFresh = true; 
-      interest.lifetime = 1000;
+      interest.lifetime = 5000;
       const dataObj = {
         nama: nama,
         jadwalkemo: jadwalkemo,
