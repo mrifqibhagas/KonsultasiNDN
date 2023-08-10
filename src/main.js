@@ -17,7 +17,7 @@ async function datapasien(evt) {
   interest.name = prefix; //membuat const baru untuk dari fungsi interest dan name
   interest.mustBeFresh = true; 
   interest.lifetime = 10000;
-  interest.appParameters = encoder.encode(app); //melakukan encode packet ndn
+  await interest.appParameters = encoder.encode(app); //melakukan encode packet ndn
   //await interest.updateParamsDigest();
 
   const t0 = Date.now();
