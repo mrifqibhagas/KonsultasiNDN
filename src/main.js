@@ -18,7 +18,7 @@ async function datapasien(evt) {
   interest.mustBeFresh = true; 
   interest.lifetime = 10000;
   interest.appParameters = encoder.encode(app); //melakukan encode packet ndn
-  #awaitinterest.updateParamsDigest();
+  //await interest.updateParamsDigest();
 
   const t0 = Date.now();
   const data = await endpoint.consume(interest);
